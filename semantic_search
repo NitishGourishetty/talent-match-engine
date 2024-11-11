@@ -1,0 +1,96 @@
+import json
+import numpy as np
+from typing import List, Dict
+from dataclasses import dataclass
+import time
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+@dataclass
+class SearchResult:
+    resume_id: str
+    score: float
+    category: str
+    details: Dict
+
+
+class SimpleResumeSearch:
+    def __init__(self, resume_data_path: str):
+        """TF-IDF vectorizer could use transformers as well"""
+
+        print(f"Loading resumes from {resume_data_path}...")
+        with open(resume_data_path, 'r', encoding='utf-8') as f:
+            self.resumes = json.load(f)
+        print(f"Loaded {len(self.resumes)} resumes")
+        
+        # https://scikit-learn.org/1.5/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+        self.vectorizer = TfidfVectorizer(
+            max_features=5000,
+            stop_words='english'
+        )
+  
+        print("Creating resume embeddings...")
+        self.resume_texts = [self._get_resume_text(resume) for resume in self.resumes]
+        self.tfidf_matrix = self.vectorizer.fit_transform(self.resume_texts)
+    
+    def _get_resume_text(self, resume: Dict) -> str:
+        # appending everything into one string so its searchable
+        text_parts = []
+        
+        if resume.get('education'):
+            text_parts.append("EDUCATION:")
+            for edu in resume['education']:
+                edu_text = f"{edu.get('degree', '')} in {edu.get('field', '')} from {edu.get('school', '')}"
+                text_parts.append(edu_text)
+        
+        if resume.get('experience'):
+            text_parts.append("EXPERIENCE:")
+            for exp in resume['experience']:
+                job_text = f"{exp.get('title', '')} at {exp.get('company', '')}"
+                text_parts.append(job_text)
+                for resp in exp.get('responsibilities', []):
+                    text_parts.append(f"• {resp}")
+        
+        if resume.get('skills'):
+            text_parts.append("SKILLS: " + ", ".join(resume['skills']))
+        if resume.get('awards'):
+            text_parts.append("AWARDS: " + ", ".join(resume['awards']))
+        
+        return "\n".join(text_parts)
+    
+    def semantic_search(self, query: str, n_results: int = 5) -> List[SearchResult]:
+        print(f"Searching for: {query}")
+        
+        # Transform query using same vectorizer
+        query_vector = self.vectorizer.transform([query])
+        
+        # Calculate similarities
+        similarities = cosine_similarity(query_vector, self.tfidf_matrix)[0]
+        
+        results = []
+        for idx, score in enumerate(similarities):
+            results.append(SearchResult(
+                resume_id=str(idx),
+                score=float(score),
+                category=self.resumes[idx].get('original_category', ''),
+                details=self.resumes[idx]
+            ))
+        
+        return sorted(results, key=lambda x: x.score, reverse=True)[:n_results]
+
+
+if __name__ == "__main__":
+    searcher = SimpleResumeSearch('processed_resumes.json')
+    
+    # Testin with this prompt
+    print("\nSemantic search for 'experienced manager with leadership skills':")
+    semantic_results = searcher.semantic_search(
+        "experienced manager with leadership skills",
+        n_results=2
+    )
+    for result in semantic_results:
+        print(f"\nMatch (Score: {result.score:.3f}):")
+        print(f"Category: {result.category}")
+        if result.details.get('experience'):
+            print("Resume Information:")
+            print(result.details)
