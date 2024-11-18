@@ -1,75 +1,209 @@
 [
   {
-    "education": [],
+    "education": [
+      {
+        "degree": "N/A",
+        "level": "College",
+        "field": "Business Administration",
+        "school": "Jefferson College",
+        "graduation_date": "1999",
+        "gpa": null,
+        "honors": [
+          "American Shrubel Leadership Scholarship"
+        ]
+      },
+      {
+        "degree": "High School Diploma",
+        "level": "High School",
+        "field": "College Prep. studies",
+        "school": "Sainte Genevieve Senior High",
+        "graduation_date": "1998",
+        "gpa": null,
+        "honors": []
+      }
+    ],
     "experience": [
       {
-        "title": "HR Administrator/Marketing Associate",
+        "title": "HR Administrator/Marketing Associate HR Administrator",
         "company": "Company Name",
         "duration": "Dec 2013 to Current",
+        "start_date": "2013-12",
+        "end_date": "Current",
         "responsibilities": [
-          "Helps to develop policies, directs and coordinates activities such as employment, compensation, labor relations, benefits, training, and employee services.",
-          "Prepares employee separation notices and related documentation",
-          "Keeps records of benefits plans participation such as insurance and pension plan, personnel transactions such as hires, promotions, transfers, performance reviews, and terminations, and employee statistics for government reporting.",
-          "Advises management in appropriate resolution of employee relations issues.",
-          "Administers benefits programs such as life, health, dental, insurance, pension plans, vacation, sick leave, leave of absence, and employee assistance."
-        ]
+          "Develop policies",
+          "Direct and coordinate activities such as employment, compensation, labor relations, benefits, training, and employee services",
+          "Prepare employee separation notices and related documentation",
+          "Keep records of benefits plans participation",
+          "Advise management in appropriate resolution of employee relations issues",
+          "Administer benefits programs"
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Marketing Associate",
         "company": "Company Name",
-        "duration": "Designed and created marketing collateral for sales meetings, trade shows and company executives.",
+        "duration": "Dec 2013 to Current",
+        "start_date": "2013-12",
+        "end_date": "Current",
         "responsibilities": [
-          "Managed the in-house advertising program consisting of print and media collateral pieces.",
-          "Assisted in the complete design and launch of the company's website in 2 months.",
-          "Created an official company page on Facebook to facilitate interaction with customers.",
-          "Analyzed ratings and programming features of competitors to evaluate the effectiveness of marketing strategies."
-        ]
+          "Design and create marketing collateral for sales meetings, trade shows and company executives",
+          "Manage the in-house advertising program",
+          "Assist in the complete design and launch of the company's website",
+          "Create an official company page on Facebook",
+          "Analyze ratings and programming features of competitors"
+        ],
+        "achievements": [
+          "Designed and launched the company's website in 2 months"
+        ],
+        "location": "City, State"
       },
       {
         "title": "Advanced Medical Claims Analyst",
         "company": "Company Name",
         "duration": "Mar 2012 to Dec 2013",
+        "start_date": "2012-03",
+        "end_date": "2013-12",
         "responsibilities": [
-          "Reviewed medical bills for the accuracy of the treatments, tests, and hospital stays prior to sanctioning the claims.",
-          "Trained to interpret the codes (ICD-9, CPT) and terminology commonly used in medical billing to fully understand the paperwork that is submitted by healthcare providers.",
-          "Required to have organizational and analytical skills as well as computer skills, knowledge of medical terminology and procedures, statistics, billing standards, data analysis and laws regarding medical billing."
-        ]
+          "Review medical bills for the accuracy of the treatments, tests, and hospital stays",
+          "Train to interpret the codes (ICD-9, CPT) and terminology commonly used in medical billing",
+          "Organize and analyze skills as well as computer skills, knowledge of medical terminology and procedures, statistics, billing standards, data analysis and laws regarding medical billing"
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Assistant General Manager",
         "company": "Company Name",
         "duration": "Jun 2010 to Dec 2010",
+        "start_date": "2010-06",
+        "end_date": "2010-12",
         "responsibilities": [
-          "Performed duties including but not limited to, budgeting and financial management, accounting, human resources, payroll and purchasing.",
-          "Established and maintained close working relationships with all departments of the hotel to ensure maximum operation, productivity, morale and guest service.",
-          "Handled daily operations and reported directly to the corporate office.",
-          "Hired and trained staff on overall objectives and goals with an emphasis on high customer service.",
-          "Marketing and Advertising, working on public relations with the media, government and local businesses and Chamber of Commerce."
-        ]
+          "Perform duties including but not limited to, budgeting and financial management, accounting, human resources, payroll and purchasing",
+          "Establish and maintain close working relationships with all departments of the hotel",
+          "Handle daily operations and report directly to the corporate office",
+          "Hire and train staff on overall objectives and goals with an emphasis on high customer service",
+          "Marketing and Advertising, working on public relations with the media, government and local businesses and Chamber of Commerce"
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Executive Support / Marketing Assistant",
         "company": "Company Name",
         "duration": "Jul 2007 to Jun 2010",
+        "start_date": "2007-07",
+        "end_date": "2010-06",
         "responsibilities": [
-          "Provided assistance to various department heads - Executive, Marketing, Customer Service, Human Resources.",
-          "Managed front-end operations to ensure friendly and efficient transactions.",
-          "Ensured the swift resolution of customer issues to preserve customer loyalty while complying with company policies.",
-          "Exemplified the second-to-none customer service delivery in all interactions with customers and potent"
-        ]
+          "Provide assistance to various department heads - Executive, Marketing, Customer Service, Human Resources",
+          "Manage front-end operations to ensure friendly and efficient transactions",
+          "Ensure the swift resolution of customer issues to preserve customer loyalty while complying with company policies",
+          "Exemplify the second-to-none customer service delivery in all interactions with customers and potential clients"
+        ],
+        "achievements": [],
+        "location": "City, State"
+      },
+      {
+        "title": "Reservation & Front Office Manager",
+        "company": "Company Name",
+        "duration": "Jun 2004 to Jul 2007",
+        "start_date": "2004-06",
+        "end_date": "2007-07",
+        "responsibilities": [],
+        "achievements": [],
+        "location": "City, State"
+      },
+      {
+        "title": "Owner/ Partner",
+        "company": "Company Name",
+        "duration": "Dec 2001 to May 2004",
+        "start_date": "2001-12",
+        "end_date": "2004-05",
+        "responsibilities": [],
+        "achievements": [],
+        "location": "City, State"
+      },
+      {
+        "title": "Price Integrity Coordinator",
+        "company": "Company Name",
+        "duration": "Aug 1999 to Dec 2001",
+        "start_date": "1999-08",
+        "end_date": "2001-12",
+        "responsibilities": [],
+        "achievements": [],
+        "location": "City, State"
       }
     ],
-    "skills": [],
+    "skills": {
+      "technical": [
+        "Accounting",
+        "Data analysis",
+        "Documentation",
+        "Government relations",
+        "Human Resources",
+        "Insurance",
+        "Labor relations",
+        "Marketing",
+        "Medical billing",
+        "Medical terminology",
+        "Office",
+        "Payroll",
+        "Performance reviews",
+        "Policies",
+        "Presentations",
+        "Public relations",
+        "Reporting",
+        "Statistics",
+        "Website"
+      ],
+      "soft": [
+        "Focused on customer satisfaction",
+        "Team management",
+        "Marketing savvy",
+        "Conflict resolution techniques",
+        "Training and development",
+        "Skilled multi-tasker",
+        "Client relations specialist"
+      ],
+      "certifications": [
+        "Missouri DOT Supervisor Training Certification",
+        "Certified by IHG in Customer Loyalty and Marketing by Segment",
+        "Hilton Worldwide General Manager Training Certification",
+        "Accomplished Trainer for cross server hospitality systems such as Hilton OnQ, Micros Opera PMS, Fidelio OPERA Reservation System (ORS), Holidex"
+      ]
+    },
     "awards": [],
+    "languages": [],
     "original_category": "HR"
   },
   {
-    "education": [],
+    "education": [
+      {
+        "degree": "Master of Arts",
+        "level": "Masters",
+        "field": "Corporate Communication & Public Relations",
+        "school": "Sacred Heart University",
+        "graduation_date": "2014",
+        "gpa": null,
+        "honors": []
+      },
+      {
+        "degree": "Bachelor of Arts",
+        "level": "Bachelors",
+        "field": "Relational Communication",
+        "school": "Western Connecticut State University",
+        "graduation_date": "2013",
+        "gpa": null,
+        "honors": []
+      }
+    ],
     "experience": [
       {
         "title": "HR Specialist, US HR Operations",
         "company": "Company Name",
         "duration": "09/2015 to Current",
+        "start_date": "2015-09",
+        "end_date": "Current",
         "responsibilities": [
           "Managed communication regarding launch of Operations group, policy changes and system outages",
           "Designed standard work and job aids to create comprehensive training program for new employees and contractors",
@@ -80,12 +214,16 @@
           "Provide real-time process improvement feedback on key metrics and initiatives",
           "Successfully re-branded US HR Operations SharePoint site",
           "Business Unit project manager for RFI/RFP on Background Check and Drug Screen vendor"
-        ]
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "IT, Marketing and Communications Co-op",
         "company": "Company Name",
         "duration": "01/2014 to 05/2015",
+        "start_date": "2014-01",
+        "end_date": "2015-05",
         "responsibilities": [
           "Posted new articles, changes and updates to corporate SharePoint site including graphics and visual communications",
           "Researched and drafted articles and feature stories to promote company activities and programs",
@@ -96,12 +234,16 @@
           "Created presentations for management and executive approval to ensure alignment with corporate guidelines and branding",
           "Maintained the MySikorsky SharePoint site and provided timely solutions to mitigate issues",
           "Created story board and produced video for annual IT All Hands meeting"
-        ]
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Relationship Coordinator/Marketing Specialist",
         "company": "Company Name",
         "duration": "10/2012 to 01/2014",
+        "start_date": "2012-10",
+        "end_date": "2014-01",
         "responsibilities": [
           "Partnered with vendor to manage the in-house advertising program consisting of print and media collateral pieces",
           "Coordinated pre-show and post-show activities at trade shows",
@@ -112,12 +254,16 @@
           "Coordinated marketing materials including brochures, promotional materials and products",
           "Partnered with graphic designers to develop appropriate materials and branding for brochures",
           "Used tracking and reporting systems for sales leads and appointments"
-        ]
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Assistant Head Teller",
         "company": "Company Name",
         "duration": "09/2009 to 10/2012",
+        "start_date": "2009-09",
+        "end_date": "2012-10",
         "responsibilities": [
           "Received an internal audit score of 100 %",
           "Performed daily and monthly audits of ATM machines and tellers",
@@ -131,11 +277,50 @@
           "Promoted marketing the grand opening of new branch locations to strengthen company brand affinity",
           "Organized company sponsored events resulting in increased brand awareness and improved sales",
           "Coached peers on the proper use of programs to increase work flow efficiency"
-        ]
+        ],
+        "achievements": [
+          "Received an internal audit score of 100 %",
+          "Consistently met or exceeded quarterly sales goals"
+        ],
+        "location": "City, State"
+      },
+      {
+        "title": "Senior Producer - 2014 SHU Media Exchange",
+        "company": "Company Name",
+        "duration": "2014",
+        "start_date": "2014",
+        "end_date": "2014",
+        "responsibilities": [
+          "Planned and executed event focusing on Connecticut's creative corridor, growth of industry and opportunities that come with development",
+          "A panel of industry professionals addressed topics related to media and hosted a question and answer session for approximately 110 attendees",
+          "Following the forum, guests were invited to engage in networking and conversation at a post-event reception"
+        ],
+        "achievements": [],
+        "location": "City, State"
       }
     ],
-    "skills": [],
+    "skills": {
+      "technical": [
+        "Adobe Photoshop",
+        "ADP",
+        "Asset Management",
+        "Final Cut Pro",
+        "Illustrator",
+        "InDesign",
+        "Lotus Notes",
+        "Microsoft Office",
+        "SharePoint",
+        "Project Management"
+      ],
+      "soft": [
+        "Customer Care",
+        "Innovation",
+        "Employee Development"
+      ],
+      "certifications": []
+    },
     "awards": [],
+    "languages": [],
     "original_category": "HR"
   },
   {
@@ -145,105 +330,181 @@
         "title": "HR Director",
         "company": "Company Name",
         "duration": "09/2016 to Current",
+        "start_date": "2016-09",
+        "end_date": "Current",
         "responsibilities": [
-          "Developed New Website for Agency, payroll processing changes, and implementation of new HRIS System.",
-          "Oversaw the employment process taking the lead role in clinician, physician and management team recruitment initiatives.",
-          "Developed, maintain and interpret HR policy.",
-          "Authored the Employee Handbook.",
-          "Provided coaching and support to management and supervisors on performance management and other related issues.",
-          "Maintained in-depth knowledge of legal requirements related to day-to-day management of employees, reducing legal risks and ensuring regulatory compliance.",
-          "Evaluated and recommend changes to the employee benefits plan.",
-          "Oversaw day to day administration of benefits."
-        ]
+          "Developed New Website for Agency",
+          "Payroll processing changes",
+          "Implementation of new HRIS System",
+          "Oversaw the employment process",
+          "Took the lead role in clinician, physician and management team recruitment initiatives",
+          "Developed, maintained and interpreted HR policy",
+          "Authored the Employee Handbook",
+          "Provided coaching and support to management and supervisors on performance management and other related issues",
+          "Maintained in-depth knowledge of legal requirements related to day-to-day management of employees",
+          "Reduced legal risks and ensured regulatory compliance",
+          "Evaluated and recommended changes to the employee benefits plan",
+          "Oversaw day to day administration of benefits"
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "HR Director",
         "company": "Company Name",
         "duration": "04/2009 to 09/2016",
+        "start_date": "2009-04",
+        "end_date": "2016-09",
         "responsibilities": [
-          "Develped Supervisory Education, SHRO Website, SHRO HRIS System and Automation of payroll processing.",
-          "Established and directed a comprehensive statewide human resource program for both classified and unclassified State employees/positions in the Adjutant General's Department.",
-          "Resolved non-routine HR related issues associated as they arose; reviewed documents and approved all hires and promotions; reviews and"
-        ]
+          "Developed Supervisory Education",
+          "SHRO Website",
+          "SHRO HRIS System and Automation of payroll processing",
+          "Established and directed a comprehensive statewide human resource program",
+          "Resolved non-routine HR related issues",
+          "Reviewed documents and approved all hires and promotions",
+          "Reviewed and approved, modified and/or disapproved wage/salary requests",
+          "Reviewed any significant changes to position descriptions",
+          "Consulted with the TAG and both military and state manager/ supervisors",
+          "Served as the administration's management representative in labor negotiations"
+        ],
+        "achievements": [],
+        "location": "City, State"
+      },
+      {
+        "title": "HR Manager/Sr. Recruiter",
+        "company": "Company Name",
+        "duration": "10/2003 to 06/2006",
+        "start_date": "2003-10",
+        "end_date": "2006-06",
+        "responsibilities": [
+          "Created an HRIS tracking system used for recruitment",
+          "Responsible for Ramp up and hiring of all customer service agents, and other positions as needed",
+          "Placement and development of all advertising",
+          "Met and exceeded all hiring goals",
+          "Responsible for Hiring Senior Management",
+          "Responsible for recruitment of 950 new employees",
+          "Coordinated and facilitated manpower planning, recruitment and retention, career development and training, staff relations, compensation and benefits, compliance with local, state and federal statutory regulations, public programs, and regulatory audit procedures"
+        ],
+        "achievements": [
+          "Met and exceeded all hiring goals",
+          "Responsible for recruitment of 950 new employees"
+        ],
+        "location": "City, State"
+      },
+      {
+        "title": "Human Resources Coordinator",
+        "company": "Company Name",
+        "duration": "03/1996 to 02/2000",
+        "start_date": "1996-03",
+        "end_date": "2000-02",
+        "responsibilities": [
+          "Developed HRIS database from ground up for employee records and monitoring",
+          "Instrumental in reducing the use of Agency Staffing needs for hospital",
+          "Coordinated and facilitates manpower planning, recruitment and retention"
+        ],
+        "achievements": [
+          "Reduced the use of Agency Staffing needs for hospital"
+        ],
+        "location": "City, State"
       }
     ],
-    "skills": [
-      "Recruiting",
-      "FMLA/EEO/FLSA",
-      "HRIS Development",
-      "Benefit Administration",
-      "Policy Development",
-      "Web Page Development"
-    ],
-    "awards": [
-      "Kansas Health Institute - Health Outcomes for the State of Kansas - 1999",
-      "Project Management Institute Member",
-      "SHRM",
-      "Chamber of Commerce - 1999",
-      "Friends University President's Honor Roll - 1997",
-      "Friends University Dean's Honor Roll",
-      "Student Liaison for Friends University Topeka",
-      "ASHHRA",
-      "KAHHR",
-      "ACM"
-    ],
+    "skills": {
+      "technical": [
+        "Recruiting",
+        "FMLA/EEO/FLSA",
+        "HRIS Development",
+        "Benefit Administration",
+        "Policy Development",
+        "Web Page Development"
+      ],
+      "soft": [],
+      "certifications": []
+    },
+    "awards": [],
+    "languages": [],
     "original_category": "HR"
   },
   {
     "education": [
       {
         "degree": "Certificate of Completion",
+        "level": "Certificate",
         "field": "Business Administration",
         "school": "Texas A&M Extension Services",
-        "graduation_date": "1997"
+        "graduation_date": "1997",
+        "gpa": null,
+        "honors": []
       }
     ],
     "experience": [
       {
-        "title": "Hr Specialist",
+        "title": "HR Specialist",
         "company": "Company Name",
         "duration": "May 2007 to Oct 2008",
+        "start_date": "2007-05",
+        "end_date": "2008-10",
         "responsibilities": [
-          "Received inbound emails from clients as initial point of contact to answer questions related to HR policies, practices or to resolve issues.",
-          "Helped the client by answering their inquiry, resolving their issue or routing their email to a caseworker for resolution.",
-          "Recorded and tracked the client issue via the case management tool from initiation to resolution.",
-          "Maintained records of customer interactions and transactions by documenting details of inquiries, complaints, and comments as well as actions taken."
-        ]
+          "Received inbound emails from clients as initial point of contact to answer questions related to HR policies, practices or to resolve issues",
+          "Helped the client by answering their inquiry, resolving their issue or routing their email to a caseworker for resolution",
+          "Recorded and tracked the client issue via the case management tool from initiation to resolution",
+          "Maintained records of customer interactions and transactions by documenting details of inquiries, complaints, and comments as well as actions taken"
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Customer Service Representative",
         "company": "Company Name",
         "duration": "Mar 2007 to Feb 2008",
+        "start_date": "2007-03",
+        "end_date": "2008-02",
         "responsibilities": [
-          "Maintained records of customer interactions and transactions by documenting details of inquiries, complaints, and comments, as well as actions taken.",
-          "Developed and implemented filing and delivery methods for FMLA and Short Term Disability documentation to respective global clientele.",
-          "Facilitated communication for the Absence Management Team to clients and internal departmental teams.",
-          "Organized and maintained payroll and people services database management system.",
+          "Maintained records of customer interactions and transactions by documenting details of inquiries, complaints, and comments, as well as actions taken",
+          "Developed and implemented filing and delivery methods for FMLA and Short Term Disability documentation to respective global clientele",
+          "Facilitated communication for the Absence Management Team to clients and internal departmental teams",
+          "Organized and maintained payroll and people services database management system",
           "Communicated to clients and internal/external departmental teams mitigated risks and resolutions regarding policy, transactions and other queries"
-        ]
+        ],
+        "achievements": [],
+        "location": "City, State"
       },
       {
         "title": "Call Centre Shift Supervisor",
         "company": "Company Name",
         "duration": "Aug 2003 to Mar 2007",
+        "start_date": "2003-08",
+        "end_date": "2007-03",
         "responsibilities": [
-          "Answered and Dispatched calls for Medical and Professional clients in the San Antonio and surrounding areas.",
-          "Provided call monitoring to ensure staff was adhering to quality call control.",
-          "Maintained On Call books for various medical staff to ensure that the correct staff was contacted during after hours and weekends."
-        ]
+          "Answered and Dispatched calls for Medical and Professional clients in the San Antonio and surrounding areas",
+          "Provided call monitoring to ensure staff was adhering to quality call control",
+          "Maintained On Call books for various medical staff to ensure that the correct staff was contacted during after hours and weekends"
+        ],
+        "achievements": [],
+        "location": "City, State"
       }
     ],
-    "skills": [
-      "10-Key by touch",
-      "Type 50 wpm",
-      "filing",
-      "Access",
-      "Microsoft Excel",
-      "Microsoft Outlook",
-      "Microsoft PowerPoint",
-      "Microsoft Word"
-    ],
+    "skills": {
+      "technical": [
+        "10-Key by touch",
+        "Type 50 wpm",
+        "filing",
+        "Access",
+        "Microsoft Excel",
+        "Microsoft Outlook",
+        "Microsoft PowerPoint",
+        "Microsoft Word"
+      ],
+      "soft": [
+        "Excellent customer service skills",
+        "Excellent oral and written presentation",
+        "Seasoned in conflict resolution",
+        "Personnel management",
+        "Telephone inquiries specialist"
+      ],
+      "certifications": []
+    },
     "awards": [],
+    "languages": [],
     "original_category": "HR"
   },
   {
@@ -253,63 +514,97 @@
         "title": "HR Manager",
         "company": "Company Name",
         "duration": "Jan 2015 to Current",
+        "start_date": "2015-01",
+        "end_date": "Current",
         "responsibilities": [
           "Manage the Human Resource function for e-Cycle's corporate office as well as their fulfillment and data center",
-          "Foster an associate-oriented culture emphasizing continuous improvement, teamwork, high performance, and quality",
           "Ensure organizational conformation with applicable HR related regulations and statutes as well as organizational procedures and policies",
           "Implement HR programs and policies as needed by the organization",
           "Identify, evaluate, and resolve human relations, employee morale, work performance, and organizational productivity concerns",
           "Develop staffing strategies and implement programs and plans to identify and cultivate effective and appropriate sources for employees at all job levels",
           "Create or assist in the creation of associate training and organizational development programs",
           "Develop and manage the annual associate review process",
-          "Insure that regional staff is included in corporate activities and feel like they are a part of the team",
-          "Responsible for the human resource management system(s) and provide staff and management with essential reporting information in order to help them in managing their associate resources",
-          "Recruit and retain top quality associates for each department, this includes recruiting nationally and in some cases at an executive level",
+          "Responsible for the human resource management system(s) and provide staff and management with essential reporting information",
+          "Recruit and retain top quality associates for each department",
           "Create or assist in the creation of compensation plans",
-          "Employee benefit administration consisting of Health, Dental, Vision, VSTD, VLTD and 401(k)",
+          "Employee benefit administration"
+        ],
+        "achievements": [
           "Successful in reducing the health benefit expected increase from 46% to 5% during my first month with the organization"
-        ]
+        ],
+        "location": "City, State"
       },
       {
         "title": "Sr. HR Manager",
         "company": "Company Name",
         "duration": "Jan 2013 to Jan 2015",
+        "start_date": "2013-01",
+        "end_date": "2015-01",
         "responsibilities": [
-          "Partnered with local leadership and Corporate HR to develop and implement HR policies, processes, technology and services aligned to support company's strategic initiatives",
-          "Coordinated efforts to recruit and hire over 220 full-time hourly associates and 27 management level employees while converting agency staff to full time",
-          "Managed and created the set up of the HR business office, including development of personnel files, new hire practices, payroll, and HR reporting",
-          "Managed, by providing direction and development to HR, and developed the HR delivery as business continued to grow",
-          "Strategic business partner to the Site Director and other operations leaders in support of start-up operations, day-to-day operations, and peak season planning, staffing, and operations",
-          "Worked successfully with local temporary agencies to staff to peak volume, which consisted of over 1800 total associates delivering over 3 million units from Black Friday to Christmas",
-          "Influenced HR strategy and executed tactical direction for the facility within the overall HR strategy",
-          "Ensured internal consistency of HR policies and procedures across multiple locations",
-          "Interacted with the Corporate HR team for exempt staffing, compensation and benefits, and other functional groups to support Operations",
-          "Maintained knowledge of HR policies and procedures, laws and regulations, industry trends"
-        ]
+          "Coordinated efforts to recruit and hire over 220 full time hourly associates and 27 management level employees",
+          "Instrumental in managing and creating the set up of the HR business office",
+          "Strategic business partner to the Site Director, as well as other operations leaders",
+          "Worked successfully with local temporary agencies in order to staff to our Peak volume",
+          "Influence HR strategy and execute tactical direction for the facility within the overall HR strategy",
+          "Interact with the Corporate HR team for exempt staffing, compensation and benefits, and other functional groups",
+          "Maintain knowledge of HR policies and procedures, laws and regulations, industry trends and developments",
+          "Develop a work environment that demonstrates Fanatics core values",
+          "Provide strategic direction on leadership development and workforce planning initiatives within the fulfillment center",
+          "Coach senior business leaders and front line supervisors on HR polices, procedures, and best practices",
+          "Ensure integrity, maintenance and confidentiality of all personnel records",
+          "Improve HR service delivery in line with overall business performance expectations",
+          "Manage the HR function with measurable objectives"
+        ],
+        "achievements": [],
+        "location": "City, State"
+      },
+      {
+        "title": "HR Director",
+        "company": "Company Name",
+        "duration": "Jan 2008 to Jan 2012",
+        "start_date": "2008-01",
+        "end_date": "2012-01",
+        "responsibilities": [
+          "Providing situation appropriate and policy compliant human resource support for 2 separate business units",
+          "Played a key role in ensuring the successful merge of five separate private physician practices into one Non-Profit organization",
+          "Structured and implemented programs and policies in the areas of compensation structures, benefits packages, incentive compensation plans and physician employment contracts",
+          "Fostered a teamwork/open-door environment conducive to positive dialogue across the organization",
+          "Responsible for maintaining staffing levels for all positions within the health center"
+        ],
+        "achievements": [
+          "85% overall employee satisfaction rating"
+        ],
+        "location": "City, State"
       }
     ],
-    "skills": [
-      "HR Department Startup",
-      "Employment Law",
-      "FMLA/ADA/EEO/WC",
-      "Mediation & Advocacy",
-      "HR Policies & Procedures",
-      "Staff Recruitment & Retention",
-      "Salary Negotiations",
-      "Employee Relations",
-      "Benefits Administration",
-      "Unemployment Administration",
-      "Worker's Compensation Administration",
-      "Orientation & On-Boarding",
-      "HRIS Technologies",
-      "Training & Development",
-      "Performance Management",
-      "Organizational Development",
-      "HR Program/Project Management",
-      "HRIS applications (Lawson, Paychex, Kronos, ADP)",
-      "MS Office (Word, Excel, PowerPoint, Publisher, Access, Visio, Outlook)"
-    ],
+    "skills": {
+      "technical": [
+        "HR Department Startup",
+        "Three New Organization Startups",
+        "Employment Law",
+        "FMLA/ADA/EEO/WC",
+        "Mediation & Advocacy",
+        "HR Policies & Procedures",
+        "Staff Recruitment & Retention",
+        "Salary Negotiations",
+        "Employee Relations",
+        "Benefits Administration",
+        "Unemployment Administration",
+        "Worker's Compensation Administration",
+        "Orientation & On-Boarding",
+        "HRIS Technologies",
+        "Training & Development",
+        "Performance Management",
+        "Organizational Development",
+        "HR Program/Project Management",
+        "HRIS applications (Lawson, Paychex, Kronos, ADP)",
+        "MS Office (Word, Excel, PowerPoint, Publisher, Access, Visio, Outlook)"
+      ],
+      "soft": [],
+      "certifications": []
+    },
     "awards": [],
+    "languages": [],
     "original_category": "HR"
   }
 ]
