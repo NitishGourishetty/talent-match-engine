@@ -3,17 +3,18 @@ import numpy as np
 from openai import OpenAI
 from typing import List, Dict
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
-def get_searchable_text(resume: Dict) -> Dict[str, str]:
+def get_searchable_text(resume: Dict) -> str:
     education_texts = [
         text for edu in resume.get('education', [])
         for text in [edu.get('degree', ''), edu.get('field', ''), edu.get('school', '')]
         if text
     ]
     
-    # focus on recent
     experience_texts = [
         text for exp in resume.get('experience', [])[:3]
         for text in [
@@ -23,33 +24,27 @@ def get_searchable_text(resume: Dict) -> Dict[str, str]:
         ]
         if text
     ]
-    
     skills = resume.get('skills', {})
+    technical_skills = skills.get('technical', [])
+    soft_skills = skills.get('soft', [])
     
-    return {
-        'education': ' '.join(education_texts),
-        'experience': ' '.join(experience_texts),
-        'technical_skills': ' '.join(skills.get('technical', [])),
-        'soft_skills': ' '.join(skills.get('soft', []))
-    }
+    # markers for sections
+    all_parts = (
+        ["[EDUCATION]"] + education_texts +
+        ["[EXPERIENCE]"] + experience_texts +
+        ["[TECHNICAL SKILLS]"] + technical_skills +
+        ["[SOFT SKILLS]"] + soft_skills
+    )
+    
+    return ' '.join(all_parts)
 
-
-def create_resume_embeddings(resumes: List[Dict]) -> Dict[str, np.ndarray]:
-    embeddings = {}
-    
-    categorized_texts = [get_searchable_text(resume) for resume in resumes]
-    
-    # 4 queries, not cost effective
-    for category in ['education', 'experience', 'technical_skills', 'soft_skills']:
-        texts = [resume_text[category] for resume_text in categorized_texts]
-        response = client.embeddings.create(
-            model="text-embedding-ada-002",
-            input=texts
-        )
-        # using NP for optimization -> copilot suggestion
-        embeddings[category] = np.array([data.embedding for data in response.data])
-    
-    return embeddings
+def create_embeddings(texts: List[str]) -> np.ndarray:
+    # https://cookbook.openai.com/examples/using_embeddings
+    response = client.embeddings.create(
+        model="text-embedding-ada-002",
+        input=texts
+    )
+    return np.array([data.embedding for data in response.data])
 
 
 def verify_with_llm(query: str, resume: Dict) -> Dict:
@@ -92,21 +87,89 @@ def verify_with_llm(query: str, resume: Dict) -> Dict:
         temperature=0,
         response_format={ "type": "json_object" }
     )
-    
-    def search_resumes(
-        query: str,
-        resumes: List[Dict],
-        resume_embeddings: Dict[str, np.ndarray],
-        category_weights: Dict[str, float] = None) -> List[Dict]:
-        # default weights
-        if category_weights is None:
-            category_weights = {
-                'education': 1.0,
-                'experience': 1.0,
-                'technical_skills': 0.8,
-                'soft_skills': 0.5
-            }
-
-
-
     return json.loads(response.choices[0].message.content)
+
+    
+def search_resumes(
+    query: str,
+    resumes: List[Dict],
+    resume_embeddings: np.ndarray
+) -> List[Dict]:
+   
+    query_embedding = create_embeddings([query])[0]
+        
+    # dot product is best for matrix checking -> saw online
+    similarities = np.dot(resume_embeddings, query_embedding)
+        
+    top_indices = np.argsort(similarities)[-10:][::-1]
+        
+    results = []
+    for idx in top_indices:
+        if similarities[idx] < 0.7:
+            continue
+                
+        resume = resumes[idx]
+            
+         # Verify with LLM
+        llm_result = verify_with_llm(query, resume)
+            
+        if llm_result['matches'] and llm_result['score'] >= 0.6:
+            results.append({
+                'resume': resume,
+                'score': (similarities[idx] * 0.4) + (llm_result['score'] * 0.6),
+                'similarity': similarities[idx],
+                'llm_score': llm_result['score'],
+                'reasoning': llm_result['reasoning']
+         })
+        
+    return results[:5] 
+
+
+print("Loading resumes")
+with open('llmgenerated.json', 'r') as f:
+    resumes = json.load(f)
+print(f"Loaded {len(resumes)} resumes")
+
+print("Creating embeddings")
+searchable_texts = [get_searchable_text(resume) for resume in resumes]
+resume_embeddings = create_embeddings(searchable_texts)
+print("Created embeddings")
+
+# Example searches
+queries = [
+    "PhD in economics with teaching experience",
+    "Experience evaluating papers and creating grading rubrics",
+    "Software architect with cloud experience and team leadership"
+]
+
+# queries = [
+#     "HR Director with experience in employee training and policy development",
+#     "HR professional with recruitment and staffing experience",
+#     "Experience in benefits administration and HRIS systems"
+# ]
+
+for query in queries:
+    print(f"\nSearching for: {query}")
+    results = search_resumes(query, resumes, resume_embeddings)
+    
+    if not results:
+        print("No matches found")
+        continue
+        
+    for i, result in enumerate(results, 1):
+        try:
+            print(f"\nMatch {i}:")
+            print(f"Score: {result.get('score', 0):.2f}")
+            print(f"Similarity: {result.get('similarity', 0):.2f}")
+            print(f"LLM Score: {result.get('llm_score', 0):.2f}")
+            print("\nReasoning:")
+            for reason in result.get('reasoning', []):
+                print(f"- {reason}")
+            print("\nKey Experience:")
+            if 'resume' in result:
+                for exp in result['resume'].get('experience', [])[:2]:
+                    print(f"- {exp.get('title', '')} at {exp.get('company', '')}")
+            else:
+                print("No experience information available")
+        except Exception as e:
+            print(f"Error displaying result {i}: {str(e)}")
