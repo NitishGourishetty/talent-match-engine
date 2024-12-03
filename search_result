@@ -33,3 +33,80 @@ def get_searchable_text(resume: Dict) -> Dict[str, str]:
         'soft_skills': ' '.join(skills.get('soft', []))
     }
 
+
+def create_resume_embeddings(resumes: List[Dict]) -> Dict[str, np.ndarray]:
+    embeddings = {}
+    
+    categorized_texts = [get_searchable_text(resume) for resume in resumes]
+    
+    # 4 queries, not cost effective
+    for category in ['education', 'experience', 'technical_skills', 'soft_skills']:
+        texts = [resume_text[category] for resume_text in categorized_texts]
+        response = client.embeddings.create(
+            model="text-embedding-ada-002",
+            input=texts
+        )
+        # using NP for optimization -> copilot suggestion
+        embeddings[category] = np.array([data.embedding for data in response.data])
+    
+    return embeddings
+
+
+def verify_with_llm(query: str, resume: Dict) -> Dict:
+    # used LLM to generate this prompt. It's better at typing general requirements than me
+    prompt = f"""
+    Does this resume match the search requirements?
+    Query: {query}
+    
+    Resume Categories:
+    EDUCATION:
+    {[edu.get('degree') for edu in resume.get('education', [])]}
+    {[edu.get('field') for edu in resume.get('education', [])]}
+    
+    RECENT EXPERIENCE:
+    {[exp.get('title') for exp in resume.get('experience', [])[:2]]}
+    
+    SKILLS:
+    Technical: {resume.get('skills', {}).get('technical', [])}
+    Soft: {resume.get('skills', {}).get('soft', [])}
+    
+    Return JSON:
+    {{
+        "matches": true/false,
+        "score": 0-1,
+        "category_matches": {{
+            "education": 0-1,
+            "experience": 0-1,
+            "skills": 0-1
+        }},
+        "reasoning": ["key reasons for match/non-match"]
+    }}
+    """
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a precise resume matcher. Focus on specific, factual matches."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0,
+        response_format={ "type": "json_object" }
+    )
+    
+    def search_resumes(
+        query: str,
+        resumes: List[Dict],
+        resume_embeddings: Dict[str, np.ndarray],
+        category_weights: Dict[str, float] = None) -> List[Dict]:
+        # default weights
+        if category_weights is None:
+            category_weights = {
+                'education': 1.0,
+                'experience': 1.0,
+                'technical_skills': 0.8,
+                'soft_skills': 0.5
+            }
+
+
+
+    return json.loads(response.choices[0].message.content)
